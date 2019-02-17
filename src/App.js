@@ -1,24 +1,39 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
+
 import './App.css';
 
 class App extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      numeral: 0,
+    };
+  }
+  increm() {
+    this.setState((state) => {
+      return {numeral: state.numeral +1}
+    });
+  }
+  decrem() {
+    this.setState((state) => {
+      return { numeral: state.numeral -1}
+    });
+  }
   render() {
     return (
       <div className="App">
         <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
+          <button 
+          onClick={() => this.increm()}
           >
-            Learn React
-          </a>
+            +
+          </button>
+          {this.state.numeral}
+          <button
+          onClick={() => this.decrem()}
+          >
+            -
+          </button>
         </header>
       </div>
     );
