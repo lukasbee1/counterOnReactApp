@@ -9,14 +9,10 @@ class Counter extends Component {
     this.increment = this.increment.bind(this);
     this.decrement = this.decrement.bind(this);
   }
-  formatCount() {
-    return this.state.count;
-  }
   increment() {
     this.setState((state) => {
       return {count: state.count +1}
     });
-    
   }
   decrement() {
     this.setState((state) => {
@@ -26,9 +22,10 @@ class Counter extends Component {
   render() {
     return (
       <div>
-          <button onClick={() => {this.increment(); this.props.updateData(this.state.count);}}> inc </button>
-          <button onClick={() => this.decrement()}> dec </button>
-          
+          <button className='bg-yellow dib bw0' onClick={() => {
+            this.increment(); 
+            this.props.updateData(this.state.count);
+            }}> add </button>
       </div>
     );
   }

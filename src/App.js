@@ -9,7 +9,6 @@ class App extends Component {
         this.state = {
             robots: robots,
             globalPrice: 0,
-            
         }
     }
     render() {
@@ -19,7 +18,6 @@ class App extends Component {
                 <CardList 
                     robots={this.state.robots}
                     countChange={this.onChangeCount}/>
-                
             </div>    
         );
     }

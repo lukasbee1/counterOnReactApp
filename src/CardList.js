@@ -15,13 +15,11 @@ class CardList extends Component {
         this.setState({globalPrice: this.state.globalPrice + value})
     }
     
-    
     render() {
         return (
             <div>
             <h2>{this.state.globalPrice}</h2>
             {
-                
                 this.props.robots.map((user, i) => {
                     return(
                         <Card 
