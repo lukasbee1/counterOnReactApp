@@ -24,8 +24,14 @@ class Counter extends Component {
       <div>
           <button className='bg-yellow dib bw0' onClick={() => {
             this.increment(); 
-            this.props.updateData(this.state.count);
+            this.props.updateData(this.state.count, 'add');
+            
             }}> add </button>
+            <button className='bg-yellow dib bw0' onClick={() => {
+            this.decrement(); 
+            this.props.updateData(this.state.count, 'remove');
+            
+            }}> remove </button>
       </div>
     );
   }

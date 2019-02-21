@@ -10,9 +10,9 @@ class Card extends Component {
         }
         this.updateData = this.updateData.bind(this);
     }
-    updateData = (value) => {
-        this.setState({ Count: value, Price: value*this.props.cost });
-        this.props.updatePrice(value*this.props.cost)
+    updateData = (value, oper) => {
+        this.setState({ Count: value, Price: value*this.state.Count });
+        this.props.updatePrice(this.props.cost, oper)
     }
 
     render(){
