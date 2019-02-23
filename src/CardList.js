@@ -18,6 +18,7 @@ class CardList extends Component {
             this.setState({ globalPrice: this.state.globalPrice - value })
     }
     
+    
     render() {
         return (
             <div>
