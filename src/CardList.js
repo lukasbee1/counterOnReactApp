@@ -13,11 +13,9 @@ class CardList extends Component {
     
     updatePrice = (value, oper) => {
         if (oper === 'add')
-            this.setState({
-                globalPrice: this.state.globalPrice + value})
+            this.setState({ globalPrice: this.state.globalPrice + value })
         else if (oper === 'remove')
-            this.setState({
-                globalPrice: this.state.globalPrice - value})
+            this.setState({ globalPrice: this.state.globalPrice - value })
     }
     
     render() {

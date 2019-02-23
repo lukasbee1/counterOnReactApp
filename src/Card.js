@@ -5,13 +5,13 @@ class Card extends Component {
     constructor() {
         super();
         this.state = {
-            Count: 0,
+            Count: 0, 
             Price: 0,
         }
         this.updateData = this.updateData.bind(this);
     }
     updateData = (value, oper) => {
-        this.setState({ Count: value, Price: value*this.state.Count });
+        this.setState({ Count: value, Price: value * this.state.Price });
         this.props.updatePrice(this.props.cost, oper)
     }
 
@@ -23,7 +23,8 @@ class Card extends Component {
                     <h2> {this.props.name}</h2>
                     cost: {this.props.cost} <br/>
                     count: {this.state.Count} <br/>
-                    <Counter  updateData={this.updateData}  />
+                    <Counter  updateData={ this.updateData }  />
+                    price: {this.state.Price}
                 </div>
             </div>
         );

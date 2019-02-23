@@ -11,26 +11,24 @@ class Counter extends Component {
   }
   increment() {
     this.setState((state) => {
-      return {count: state.count +1}
+      return {count: state.count + 1}
     });
   }
   decrement() {
     this.setState((state) => {
-      return { count: state.count -1}
+      return { count: state.count - 1}
     });
   }
   render() {
     return (
       <div>
-          <button className='bg-yellow dib bw0' onClick={() => {
+          <button className='bg-yellow dib bw1' onClick={ () => {
             this.increment(); 
             this.props.updateData(this.state.count, 'add');
-            
             }}> add </button>
-            <button className='bg-yellow dib bw0' onClick={() => {
+            <button className='bg-yellow dib bw1' onClick={ () => {
             this.decrement(); 
             this.props.updateData(this.state.count, 'remove');
-            
             }}> remove </button>
       </div>
     );
