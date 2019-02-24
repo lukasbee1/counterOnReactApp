@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import Card from './Card';
 
-
 class CardList extends Component {
     constructor() {
         super();
@@ -17,7 +16,6 @@ class CardList extends Component {
         else if (oper === 'remove')
             this.setState({ globalPrice: this.state.globalPrice - value })
     }
-    
     
     render() {
         return (
