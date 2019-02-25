@@ -5,7 +5,7 @@ import SearchBox from '../components/SearchBox';
 import { robots } from '../components/robots';
 import Scroll from '../components/Scroll';
 import './App.css';
-import { setSearchField, setCounter} from '../action';
+import { setSearchField, setCounter} from '../actions/action';
 
 const mapStateToProps = state => {
     return {
@@ -36,6 +36,7 @@ class App extends Component {
         const filteredRobots = this.state.robots.filter(robots =>{
             return robots.name.toLowerCase().includes(searchField.toLowerCase());
         })
+        const counter = this.state.counter
         return (
             <div className='tc'>
                 <h1 className='f1'>RoboFrinds</h1>
@@ -43,7 +44,7 @@ class App extends Component {
                 <Scroll>
                     <CardList 
                         robots={filteredRobots}
-                        countChange={onCountChange}/>
+                        />
                 </Scroll>
             </div>    
         );

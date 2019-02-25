@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import Counter from './Counter';
 
+
+
 class Card extends Component {
     constructor() {
         super();

@@ -5,7 +5,7 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './containers/App';
 import * as serviceWorker from './serviceWorker';
-import { searchRobots, changeCount } from './reducers';
+import { searchRobots, changeCount } from './reducers/reducers';
 import 'tachyons';
 
 const rootRedicer = combineReducers({ searchRobots, changeCount })
