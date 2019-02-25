@@ -5,16 +5,18 @@ import SearchBox from '../components/SearchBox';
 import { robots } from '../components/robots';
 import Scroll from '../components/Scroll';
 import './App.css';
-import { setSearchField} from '../action';
+import { setSearchField, setCounter} from '../action';
 
 const mapStateToProps = state => {
     return {
-        searchField: state.searchField
+        searchField: state.searchRobots.searchField,
+        count: state.countChange.count,
     }
 }
 const mapDispatchToProps = (dispatch) => {
     return {
-        onSearchChange: (event) => dispatch(setSearchField(event.target.value))
+        onSearchChange: (event) => dispatch(setSearchField(event.target.value)),
+        onCountChange: () => dispatch(setCounter())    
     }
 }
 
@@ -28,7 +30,7 @@ class App extends Component {
         }
     }
     componentDidMount() {
-        
+        console.log(this.props.store);
     }
 
     render() {

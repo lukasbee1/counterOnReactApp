@@ -1,14 +1,15 @@
 import React from 'react';
 import { Provider } from 'react-redux';
-import { createStore } from 'redux';
+import { createStore, combineReducers } from 'redux';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './containers/App';
 import * as serviceWorker from './serviceWorker';
-import { searchRobots } from './reducers';
+import { searchRobots, changeCount } from './reducers';
 import 'tachyons';
 
-const store = createStore(searchRobots);
+const rootRedicer = combineReducers({ searchRobots, changeCount })
+const store = createStore(rootRedicer)
 
 ReactDOM.render(
             <Provider store={store}>
