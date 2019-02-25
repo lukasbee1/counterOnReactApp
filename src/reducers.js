@@ -12,17 +12,16 @@ export const searchRobots = (state=initialStateSearch, action={}) => {
         default:
             return state;
     }
-
 }
 
 const initialStateCounter = {
-    Count: 0
+    count: 0
 }
 
 export const changeCount = (state=initialStateCounter, action={}) => {
     switch(action.type) {
         case CHANGE_COUNTER:
-            return Object.assign({}, state, {Count: Count+1})
+            return {count: state.count+1};
         default:
         return state;
     }

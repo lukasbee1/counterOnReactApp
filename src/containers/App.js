@@ -10,7 +10,7 @@ import { setSearchField, setCounter} from '../action';
 const mapStateToProps = state => {
     return {
         searchField: state.searchRobots.searchField,
-        count: state.countChange.count,
+        count: state.count,
     }
 }
 const mapDispatchToProps = (dispatch) => {
@@ -19,8 +19,6 @@ const mapDispatchToProps = (dispatch) => {
         onCountChange: () => dispatch(setCounter())    
     }
 }
-
-
 
 class App extends Component {
     constructor() {
@@ -34,7 +32,7 @@ class App extends Component {
     }
 
     render() {
-        const { searchField, onSearchChange } = this.props;
+        const { searchField, onSearchChange, onCountChange } = this.props;
         const filteredRobots = this.state.robots.filter(robots =>{
             return robots.name.toLowerCase().includes(searchField.toLowerCase());
         })
@@ -45,7 +43,7 @@ class App extends Component {
                 <Scroll>
                     <CardList 
                         robots={filteredRobots}
-                        countChange={this.onChangeCount}/>
+                        countChange={onCountChange}/>
                 </Scroll>
             </div>    
         );
