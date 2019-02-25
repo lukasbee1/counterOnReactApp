@@ -25,10 +25,17 @@ class App extends Component {
         super();
         this.state = {
             robots: robots,
+            globalPrice: 0,
         }
     }
     componentDidMount() {
         console.log(this.props.store);
+    }
+    updatePrice = (value, oper) => {
+        if (oper === 'add')
+            this.setState({ globalPrice: this.state.globalPrice + value })
+        else if (oper === 'remove')
+            this.setState({ globalPrice: this.state.globalPrice - value })
     }
 
     render() {
@@ -41,6 +48,7 @@ class App extends Component {
             <div className='tc'>
                 <h1 className='f1'>RoboFrinds</h1>
                 <SearchBox searchChange={onSearchChange} />
+                <h2 className='f1'>{this.state.globalPrice}</h2>
                 <Scroll>
                     <CardList 
                         robots={filteredRobots}

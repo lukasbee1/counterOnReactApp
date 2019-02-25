@@ -6,7 +6,6 @@ const initialStateSearch = {
 }
 
 export const searchRobots = (state=initialStateSearch, action={}) => {
-    
     switch(action.type) {
         case CHANGE_SEARCH_FIELD:
             return Object.assign({}, state, { searchField: action.payload })
@@ -19,13 +18,15 @@ const initialStateCounter = {
     count: 0
 }
 
-export const changeCount = (state=initialStateCounter, action={}) => {
-    console.log('1111111111111111111');
+export const changeCount = (state = initialStateCounter, action={}) => {
+    console.log(action.type);
     switch(action.type) {
-        case CHANGE_COUNTER:
-            return {count: state.count+1};
+        case 'INCREMENT':
+            return {count: state.coun + 1};
+        case 'DECREMENT':
+            return {count: state.count + 1};
         default:
-        return state;
+            return state;
     }
 }
 

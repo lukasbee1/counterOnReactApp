@@ -22,7 +22,7 @@ class Card extends Component {
                 <div>
                     <h2> {this.props.name}</h2>
                     <p>cost: {this.props.cost}</p>
-                    <Counter  updateData={ this.updateData }  />
+                    <Counter onIncrement= updateData={ this.updateData }  />
                 </div>
             </div>
         );

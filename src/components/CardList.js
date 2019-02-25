@@ -7,7 +7,6 @@ class CardList extends Component {
         this.state = {
             globalPrice: 0,
         }
-        this.updatePrice = this.updatePrice.bind(this);
     }
     
     updatePrice = (value, oper) => {
@@ -20,7 +19,7 @@ class CardList extends Component {
     render() {
         return (
             <div>
-            <h2>{this.state.globalPrice}</h2>
+            <h2 className='f1'>{this.state.globalPrice}</h2>
             {
                 this.props.robots.map((user, i) => {
                     return(
